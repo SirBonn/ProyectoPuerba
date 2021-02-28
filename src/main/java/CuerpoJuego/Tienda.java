@@ -111,7 +111,8 @@ public class Tienda {
                     break;
                 case "1":
                     dibujar.nivelMejoras(" gemas: ", " 05 ", " 50 ", " 35 ", DibujosAscii.magenta);
-                    System.out.println("seleccione el nivel de mejora:");
+                    System.out.println("\nSus potencia ahora es de: " +jugador.garajeAutos[slot].getAceleracion()+"\n\n");
+                    System.out.println("Seleccione el nivel de mejora:");
                     opcion = sc.nextLine();
                     if ("1".equals(opcion)) {
                         if (jugador.revisiarPago(5, 0)) {
@@ -164,6 +165,7 @@ public class Tienda {
                     break;
                 case "2":
                     dibujar.nivelMejoras("MONEDAS:", " 25 ", " 50 ", " 75 ", DibujosAscii.amarillo);
+                    System.out.println("\nEl coeficiente de sus llantas ahora es de: " +jugador.garajeAutos[slot].getCoeficienteLlantas()+"\n\n");
                     System.out.println("seleccione el nivel de mejora:");
                     opcion = sc.nextLine();
                     if ("1".equals(opcion)) {
@@ -229,7 +231,7 @@ public class Tienda {
                     System.out.println("\n\t1.Comprar gasolina\t0.cancelar");
                     opcion = sc.nextLine();
                     if ("1".equals(opcion)) {
-
+                        System.out.println("\n\nSu gasolina actual es de: " +jugador.garajeAutos[slot].getGasolina());
                         System.out.println("\ningrese la cantidad que desea: ");
                         cantidad = Integer.parseInt(sc.nextLine());
                         //if para evitar que se exceda de 100 galones de gasolina
@@ -274,6 +276,7 @@ public class Tienda {
                     break;
                 case "4":
                     dibujar.menuColores();
+                    System.out.println("\nSu auto actual es: " +jugador.garajeAutos[slot].getColor()+jugador.garajeAutos[slot].getCaracter() +"\n\n");
                     System.out.println("\ningrese el color con el que desea pintar el auto:");
                     opcion = sc.nextLine();
                     if ("1".equals(opcion)) {

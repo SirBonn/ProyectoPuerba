@@ -24,7 +24,7 @@ public class DibujosAscii {
     public final static String fblanco = "\u001b[47m";
     public final static String famarillo = "\u001b[43m";
     //mas colores hechos
-    public final static String naranja = amarillo+rojo;
+    public final static String naranja = amarillo + rojo;
     public final static String cafe = azul + amarillo + rojo;
 
     public void fail() {
@@ -126,6 +126,8 @@ public class DibujosAscii {
         System.out.println(amarillo + "\t\t\t=================================================================" + reset);
         System.out.println(verde + "\t\t\t	┌────────────────────────────────────────────────┐");
         System.out.println("\t\t\t	│ ╔════════════════════════════════════════════╗ │");
+        System.out.println("\t\t\t	│ ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ │");
+        System.out.println("\t\t\t	│ ║░░░░░░░░░░░"+magenta+"Costo del tiro 5 gemas"+verde+"░░░░░░░░░░░║ │");
         System.out.println("\t\t\t	│ ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ │");
         System.out.println("\t\t\t	│ ║░░░" + amarillo + "· 40 GEMAS   " + verde + "░░░░░░░░░░░░" + amarillo + "·5 GEMAS     " + verde + "░░░║ │");
         System.out.println("\t\t\t	│ ║░░░" + amarillo + "· 75 MONEDAS " + verde + "░░░░░░░░░░░░" + amarillo + "·10 MONEDAS  " + verde + "░░░║ │");
@@ -242,9 +244,9 @@ public class DibujosAscii {
     }
 
     public void texto5EstadYRepor() {
-        System.out.println(cyan + "  _    " + amarillo + "     _   __  ___         _   ___   __  ___  ___   _         __            _    _   _    _    _   ___   _   __ ");
-        System.out.println(cyan + " |_    " + amarillo + "    |_  (_    |    /\\   | \\   |   (_    |    |   /    /\\   (_     \\_/    |_)  |_  |_)  / \\   |   |_)  |_  (_  ");
-        System.out.println(cyan + "  _)  o" + amarillo + "    |_  __)   |   /--\\  |_/  _|_  __)   |   _|_  \\_  /--\\  __)     |     | \\  |_  |    \\_/   |   | \\  |_  __) " + reset);
+        System.out.println(cyan + "  _    " + amarillo + "     _   __  ___         _   ___   __  ___  ___   _         __            _    _   _    _    _    _  ___ __ ");
+        System.out.println(cyan + " |_    " + amarillo + "    |_  (_    |    /\\   | \\   |   (_    |    |   /    /\\   (_     \\_/    |_)  |_  |_)  / \\  |_)  |  |_  (_  ");
+        System.out.println(cyan + "  _)  o" + amarillo + "    |_  __)   |   /--\\  |_/  _|_  __)   |   _|_  \\_  /--\\  __)     |     | \\  |_  |    \\_/  | \\  |  |_  __) " + reset);
     }
 
     public void texto6Salir() {
@@ -281,23 +283,23 @@ public class DibujosAscii {
         System.out.println("░│║┌────────────────────────────────────────────────────────┐║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" + magenta + "COSTOS" + cyan + "░░░░░│║│░░░");
-        System.out.println("░│║│░░" + naranja + "1)·Honda Civic"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░" + naranja + "1)·Honda Civic" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░" + verde + "Motor: Lineal de 4 cilindros" + cyan + "░░░░░░░░░░░░" + magenta + "50 gemas" + cyan + "░░░░│║│░░░");
         System.out.println("░│║│░░░░" + amarillo + "]|:=:-" + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░" + naranja + "2)·Toyota Supra"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░" + naranja + "2)·Toyota Supra" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░" + verde + "Motor: Lineal de 6 cilindros" + cyan + "░░░░░░░░░░░░" + magenta + "60 gemas" + cyan + "░░░░│║│░░░");
         System.out.println("░│║│░░░░" + amarillo + "|]8-8>" + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░" + naranja + "3)·Nissan 300zx"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░" + naranja + "3)·Nissan 300zx" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░" + verde + "Motor: v6" + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" + magenta + "70 gemas" + cyan + "░░░░│║│░░░");
         System.out.println("░│║│░░░░" + amarillo + "|8=8>" + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░" + naranja + "4)·Audi TT"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░" + naranja + "4)·Audi TT" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░" + verde + "Motor: Lineal de 4 cilindros" + cyan + "░░░░░░░░░░░░" + magenta + "80 gemas" + cyan + "░░░░│║│░░░");
         System.out.println("░│║│░░░░" + amarillo + "]:-:-" + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░" + naranja + "5)·Mazda RX-8"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░" + naranja + "5)·Mazda RX-8" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░" + verde + "Motor de 2 rotores" + cyan + "░░░░░░░░░░░░░░░░░░░░░░" + magenta + "90 gemas" + cyan + "░░░░│║│░░░");
         System.out.println("░│║│░░░░" + amarillo + "]8=:>" + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
@@ -319,15 +321,15 @@ public class DibujosAscii {
         System.out.println("░│║┌────────────────────────────────────────────────────────┐║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░" + naranja + "1) Mejorar acelaracion"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░" + naranja + "1) Mejorar acelaracion" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░" + naranja + "2) Mejorar Llantas"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░" + naranja + "2) Mejorar Llantas" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░" + naranja + "3) Comprar gasolina"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░" + naranja + "3) Comprar gasolina" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░" + naranja + "4) Cambiar de color"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░" + naranja + "4) Cambiar de color" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░" + rojo + "0) Cancelar y regresar"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░" + rojo + "0) Cancelar y regresar" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║└────────────────────────────────────────────────────────┘║│░░░");
@@ -337,47 +339,47 @@ public class DibujosAscii {
     }
 
     public void nivelMejoras(String tipoPago, String costo1, String costo2, String costo3, String color) {
-        System.out.println(cyan+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println(cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
         System.out.println("░┌────────────────────────────────────────────────────────────┐░░░");
         System.out.println("░│╔══════════════════════════════════════════════════════════╗│░░░");
         System.out.println("░│║┌────────────────────────────────────────────────────────┐║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"+color+tipoPago+cyan+"░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" + color + tipoPago + cyan + "░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░" + naranja + "1) Mejora nivel bajo" +reset+ cyan + "░░░░░░░░░░"+color+costo1+cyan+"░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░" + naranja + "1) Mejora nivel bajo" + reset + cyan + "░░░░░░░░░░" + color + costo1 + cyan + "░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░" + naranja + "2) Mejora nivel medio"+reset + cyan + "░░░░░░░░░"+color+costo2+cyan+"░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░" + naranja + "2) Mejora nivel medio" + reset + cyan + "░░░░░░░░░" + color + costo2 + cyan + "░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░" + naranja + "3) Mejora nivel alto"+reset + cyan + "░░░░░░░░░░"+color+costo3+cyan+"░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░" + naranja + "3) Mejora nivel alto" + reset + cyan + "░░░░░░░░░░" + color + costo3 + cyan + "░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░" + rojo + "0) Cancelar y regresar"+reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░" + rojo + "0) Cancelar y regresar" + reset + cyan + "░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║└────────────────────────────────────────────────────────┘║│░░░");
         System.out.println("░│╚══════════════════════════════════════════════════════════╝│░░░");
         System.out.println("░└────────────────────────────────────────────────────────────┘░░░");
-        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"+reset);
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" + reset);
 
     }
-    
+
     public void menuColores() {
 
-        System.out.println(cyan+"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println(cyan + "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
         System.out.println("░┌─────────────────────────────────────────────────┐░░░");
         System.out.println("░│╔═══════════════════════════════════════════════╗│░░░");
         System.out.println("░│║┌─────────────────────────────────────────────┐║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░░░░" + naranja + "1) Rojo     "+rojo +"█ "+ cyan + "░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░░░░" + naranja + "1) Rojo     " + rojo + "█ " + cyan + "░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░░░░" + naranja + "2) Azul     "+azul +"█ "+ cyan + "░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░░░░" + naranja + "2) Azul     " + azul + "█ " + cyan + "░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░░░░" + naranja + "3) Verde    "+verde +"█ "+ cyan + "░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░░░░" + naranja + "3) Verde    " + verde + "█ " + cyan + "░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░░░░" + naranja + "4) Amarillo "+amarillo +"█ "+ cyan + "░░░░░░░░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░░░░" + naranja + "4) Amarillo " + amarillo + "█ " + cyan + "░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░░░░░░░░░" + rojo + "0) Cancelar y regresar"+reset + cyan + "░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░░░░░░░░░" + rojo + "0) Cancelar y regresar" + reset + cyan + "░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
-        System.out.println("░│║│░░░░░░░░"+verde+"costo de la puntura:"+magenta+" 20 gemas"+cyan+"░░░░░░░░│║│░░░");
+        System.out.println("░│║│░░░░░░░░" + verde + "costo de la puntura:" + magenta + " 20 gemas" + cyan + "░░░░░░░░│║│░░░");
         System.out.println("░│║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│║│░░░");
         System.out.println("░│║└─────────────────────────────────────────────┘║│░░░");
         System.out.println("░│╚═══════════════════════════════════════════════╝│░░░");
@@ -385,29 +387,27 @@ public class DibujosAscii {
         System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" + reset);
     }
 
-    public void gasolinera(){
-        
-        System.out.println(verde+"▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
-        System.out.println("▒"+rojo+"┌──────────────────────────┐"+verde+"▒");
-        System.out.println("▒"+rojo+"│╔════════════════════════╗│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║┌──────────────────────┐║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░░░░░░░░░░░░░░░░░░░░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░░"+amarillo+"███"+verde+"░░░"+amarillo+"███"+verde+"░░░"+amarillo+"█████"+verde+"░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░"+amarillo+"█"+verde+"░░░░░"+amarillo+"█"+verde+"░░░"+amarillo+"█"+verde+"░"+amarillo+"█"+verde+"░░░░░░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░"+amarillo+"█"+verde+"░"+amarillo+"███"+verde+"░"+amarillo+"█"+verde+"░░░"+amarillo+"█"+verde+"░"+amarillo+"█████"+verde+"░░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░"+amarillo+"█"+verde+"░░░"+amarillo+"█"+verde+"░"+amarillo+"█████"+verde+"░░░░░░"+amarillo+"█"+verde+"░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░"+amarillo+"████"+verde+"░░"+amarillo+"█"+verde+"░░░"+amarillo+"█"+verde+"░"+amarillo+"██████"+verde+"░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░░░░░░░░░░░░░░░░░░░░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░░"+amarillo+"costo del galon:"+verde+"░░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░░░░"+amarillo+"2.5 Monedas"+verde+"░░░░░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║│"+verde+"░░░░░░░░░░░░░░░░░░░░░░"+rojo+"│║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│║└──────────────────────┘║│"+verde+"▒");
-        System.out.println("▒"+rojo+"│╚════════════════════════╝│"+verde+"▒");
-        System.out.println("▒"+rojo+"└──────────────────────────┘"+verde+"▒");
-        System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"+reset);
-        
+    public void gasolinera() {
+
+        System.out.println(verde + "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+        System.out.println("▒" + rojo + "┌──────────────────────────┐" + verde + "▒");
+        System.out.println("▒" + rojo + "│╔════════════════════════╗│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║┌──────────────────────┐║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░░░░░░░░░░░░░░░░░░░░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░░" + amarillo + "███" + verde + "░░░" + amarillo + "███" + verde + "░░░" + amarillo + "█████" + verde + "░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░" + amarillo + "█" + verde + "░░░░░" + amarillo + "█" + verde + "░░░" + amarillo + "█" + verde + "░" + amarillo + "█" + verde + "░░░░░░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░" + amarillo + "█" + verde + "░" + amarillo + "███" + verde + "░" + amarillo + "█" + verde + "░░░" + amarillo + "█" + verde + "░" + amarillo + "█████" + verde + "░░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░" + amarillo + "█" + verde + "░░░" + amarillo + "█" + verde + "░" + amarillo + "█████" + verde + "░░░░░░" + amarillo + "█" + verde + "░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░" + amarillo + "████" + verde + "░░" + amarillo + "█" + verde + "░░░" + amarillo + "█" + verde + "░" + amarillo + "██████" + verde + "░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░░░░░░░░░░░░░░░░░░░░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░░" + amarillo + "costo del galon:" + verde + "░░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░░░░" + amarillo + "2.5 Monedas" + verde + "░░░░░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║│" + verde + "░░░░░░░░░░░░░░░░░░░░░░" + rojo + "│║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│║└──────────────────────┘║│" + verde + "▒");
+        System.out.println("▒" + rojo + "│╚════════════════════════╝│" + verde + "▒");
+        System.out.println("▒" + rojo + "└──────────────────────────┘" + verde + "▒");
+        System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" + reset);
+
     }
 
 }
-
-
