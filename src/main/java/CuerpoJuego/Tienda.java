@@ -14,11 +14,11 @@ public class Tienda {
     String[] caracter = {"]|:=:-\u001b[0m", "]8-8)>\u001b[0m", "|]8=8>\u001b[0m", "]:-:-\u001b[0m", "]8=:>\u001b[0m"}; // "]8-:>\u001b[0m", "||:=:)\u001b[0m", "l8=:) \u001b[0m", "[|8=8) \u001b[0m"};
 
     public void tiendaAutos(Jugador jugador) {
-        
+
         ejecutar.limpiarPantalla();
         System.out.println(jugador.mostrarDatos() + "\n");
         dibujar.menuCompraAutos();
-        System.out.println("\n\nTe quedan " +(5-jugador.getNumAuto())+ " espacios en tu garaje");
+        System.out.println("\n\nTe quedan " + (5 - jugador.getNumAuto()) + " espacios en tu garaje");
         System.out.println("\nCual desea comprar?");
         switch (sc.nextLine()) {
             case "0":
@@ -48,7 +48,7 @@ public class Tienda {
             case "3":
                 if (jugador.revisiarPago(70, 0)) {
                     jugador.pagar(70, 0);
-                    jugador.comprarAuto(new Auto(nombre[2], motor[2], 2/*potencia*/, 1/*coeficiente de llantas*/,100/*gasolina*/, DibujosAscii.amarillo, caracter[2]));
+                    jugador.comprarAuto(new Auto(nombre[2], motor[2], 2/*potencia*/, 1/*coeficiente de llantas*/, 100/*gasolina*/, DibujosAscii.amarillo, caracter[2]));
                     ejecutar.esperaEnter();
                 } else {
                     System.out.println(DibujosAscii.rojo + "\tGemas insuficientes" + DibujosAscii.reset);
@@ -94,262 +94,279 @@ public class Tienda {
         System.out.println("\n\nque auto deseas modificar?");
         int slot = Integer.parseInt(sc.nextLine());
         slot -= 1;
-        if (jugador.garajeAutos[slot] == null || slot < 0 ) {
-            System.out.println("ESE LUGAR ESTA VACIO");
-            ejecutar.esperaEnter();
-            ejecutar.limpiarPantalla();
+        if (slot < 0 || slot > 5) {
+            ejecutar.valorInvalido();
             comprarMejoras(jugador, auto);
         } else {
+            if (jugador.garajeAutos[slot] == null) {
+                System.out.println("ESE LUGAR ESTA VACIO");
+                ejecutar.esperaEnter();
+                ejecutar.limpiarPantalla();
+                comprarMejoras(jugador, auto);
+            } else {
 
-            dibujar.menuMejoras();
-            System.out.println("\n\nque le deseas mejorar a tu " + jugador.garajeAutos[slot].getNombre());
-            opcionMenu = sc.nextLine();
-            ejecutar.limpiarPantalla();
-            switch (opcionMenu) {
-                case "0":
+                dibujar.menuMejoras();
+                System.out.println("\n\nque le deseas mejorar a tu " + jugador.garajeAutos[slot].getNombre());
+                opcionMenu = sc.nextLine();
+                ejecutar.limpiarPantalla();
+                switch (opcionMenu) {
+                    case "0":
 
-                    break;
-                case "1":
-                    dibujar.nivelMejoras(" gemas: ", " 05 ", " 50 ", " 35 ", DibujosAscii.magenta);
-                    System.out.println("\nSus potencia ahora es de: " +jugador.garajeAutos[slot].getAceleracion()+"\n\n");
-                    System.out.println("Seleccione el nivel de mejora:");
-                    opcion = sc.nextLine();
-                    if ("1".equals(opcion)) {
-                        if (jugador.revisiarPago(5, 0)) {
-                            jugador.garajeAutos[slot].mejorarAceleracion(4);
-                            jugador.pagar(5, 0);
-                            System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON GEMAS NECESARIAS");
-                            ejecutar.esperaEnter();
-                        }
-                        ejecutar.limpiarPantalla();
-                    }
-                    if ("2".equals(opcion)) {
-
-                        if (jugador.revisiarPago(20, 0)) {
-                            jugador.garajeAutos[slot].mejorarAceleracion(5);
-                            jugador.pagar(20, 0);
-                            System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON GEMAS NECESARIAS");
-                            ejecutar.esperaEnter();
-                        }
-                        ejecutar.limpiarPantalla();
-                    }
-                    if ("3".equals(opcion)) {
-
-                        if (jugador.revisiarPago(35, 0)) {
-                            jugador.garajeAutos[slot].mejorarAceleracion(7);
-                            jugador.pagar(35, 0);
-                            System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON GEMAS NECESARIAS");
-                            ejecutar.esperaEnter();
-                        }
-                        ejecutar.limpiarPantalla();
-                    }
-                    if ("0".equals(opcion)) {
-                        ejecutar.limpiarPantalla();
-                    }
-                    if (!"1".equals(opcion) && !"2".equals(opcion) && !"3".equals(opcion) && !"0".equals(opcion)) {
-                        ejecutar.valorInvalido();
-                    }
-
-                    break;
-                case "2":
-                    dibujar.nivelMejoras("MONEDAS:", " 25 ", " 50 ", " 75 ", DibujosAscii.amarillo);
-                    System.out.println("\nEl coeficiente de sus llantas ahora es de: " +jugador.garajeAutos[slot].getCoeficienteLlantas()+"\n\n");
-                    System.out.println("seleccione el nivel de mejora:");
-                    opcion = sc.nextLine();
-                    if ("1".equals(opcion)) {
-                        if (jugador.revisiarPago(0, 25.0)) {
-                            jugador.garajeAutos[slot].mejorarLlantas(2);
-                            jugador.pagar(0, 25.0);
-                            System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON MONEDAS NECESARIAS");
-                            ejecutar.esperaEnter();
-
-                        }
-                        ejecutar.limpiarPantalla();
-                    }
-
-                    if ("2".equals(opcion)) {
-                        if (jugador.revisiarPago(0, 50.0)) {
-                            jugador.garajeAutos[slot].mejorarLlantas(3);
-                            jugador.pagar(0, 50.0);
-                            System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON MONEDAS NECESARIAS");
-                            ejecutar.esperaEnter();
-
-                        }
-
-                        ejecutar.limpiarPantalla();
-                    }
-
-                    if ("3".equals(opcion)) {
-                        if (jugador.revisiarPago(0, 75.0)) {
-                            jugador.garajeAutos[slot].mejorarLlantas(5);
-                            jugador.pagar(0, 75.0);
-                            System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON MONEDAS NECESARIAS");
-                            ejecutar.esperaEnter();
-
-                        }
-                        ejecutar.limpiarPantalla();
-
-                    }
-
-                    if ("0".equals(opcion)) {
-                        ejecutar.limpiarPantalla();
-                    }
-                    if (!"1".equals(opcion) && !"2".equals(opcion) && !"3".equals(opcion) && !"0".equals(opcion)) {
-                        ejecutar.valorInvalido();
-                    }
-
-                    break;
-                case "3":
-                    int cantidad;
-                    System.out.println(jugador.mostrarDatos());
-                    dibujar.gasolinera();
-                    System.out.println("\n" + DibujosAscii.amarillo + "BIENVENIDO A LA GASOLINERA" + DibujosAscii.reset);
-                    System.out.println("\n\t1.Comprar gasolina\t0.cancelar");
-                    opcion = sc.nextLine();
-                    if ("1".equals(opcion)) {
-                        System.out.println("\n\nSu gasolina actual es de: " +jugador.garajeAutos[slot].getGasolina());
-                        System.out.println("\ningrese la cantidad que desea: ");
-                        cantidad = Integer.parseInt(sc.nextLine());
-                        //if para evitar que se exceda de 100 galones de gasolina
-                        int gasolina = (cantidad + jugador.garajeAutos[slot].getGasolina());
-                        if (gasolina <= 100) {
-                            //if para condicionar el pago
-                            if (jugador.revisiarPago(0, (cantidad * 2.5))) {
-                                jugador.garajeAutos[slot].llenarTanque(gasolina);
-                                jugador.pagar(0, (cantidad * 2.5));
-                                System.out.println("El tanque de su " +jugador.garajeAutos[slot].getNombre() +" ha sido fuleado hasta: " +jugador.garajeAutos[slot].getGasolina());
+                        break;
+                    case "1":
+                        dibujar.nivelMejoras(" gemas: ", " 05 ", " 50 ", " 35 ", DibujosAscii.magenta);
+                        System.out.println("\nSus potencia ahora es de: " + jugador.garajeAutos[slot].getAceleracion() + "\n\n");
+                        System.out.println("Seleccione el nivel de mejora:");
+                        opcion = sc.nextLine();
+                        if ("1".equals(opcion)) {
+                            if (jugador.revisiarPago(5, 0)) {
+                                jugador.garajeAutos[slot].mejorarAceleracion(4);
+                                jugador.pagar(5, 0);
+                                System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
                                 ejecutar.esperaEnter();
 
-                            } else { //si no cumple el pago
+                            } else {
+                                System.out.println("USTED NO CUENTA CON GEMAS NECESARIAS");
+                                ejecutar.esperaEnter();
+                            }
+                            ejecutar.limpiarPantalla();
+                        }
+                        if ("2".equals(opcion)) {
+
+                            if (jugador.revisiarPago(20, 0)) {
+                                jugador.garajeAutos[slot].mejorarAceleracion(5);
+                                jugador.pagar(20, 0);
+                                System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
+                                ejecutar.esperaEnter();
+
+                            } else {
+                                System.out.println("USTED NO CUENTA CON GEMAS NECESARIAS");
+                                ejecutar.esperaEnter();
+                            }
+                            ejecutar.limpiarPantalla();
+                        }
+                        if ("3".equals(opcion)) {
+
+                            if (jugador.revisiarPago(35, 0)) {
+                                jugador.garajeAutos[slot].mejorarAceleracion(7);
+                                jugador.pagar(35, 0);
+                                System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
+                                ejecutar.esperaEnter();
+
+                            } else {
+                                System.out.println("USTED NO CUENTA CON GEMAS NECESARIAS");
+                                ejecutar.esperaEnter();
+                            }
+                            ejecutar.limpiarPantalla();
+                        }
+                        if ("0".equals(opcion)) {
+                            ejecutar.limpiarPantalla();
+                        }
+                        if (!"1".equals(opcion) && !"2".equals(opcion) && !"3".equals(opcion) && !"0".equals(opcion)) {
+                            ejecutar.valorInvalido();
+                        }
+
+                        break;
+                    case "2":
+                        dibujar.nivelMejoras("MONEDAS:", " 25 ", " 50 ", " 75 ", DibujosAscii.amarillo);
+                        System.out.println("\nEl coeficiente de sus llantas ahora es de: " + jugador.garajeAutos[slot].getCoeficienteLlantas() + "\n\n");
+                        System.out.println("seleccione el nivel de mejora:");
+                        opcion = sc.nextLine();
+                        if ("1".equals(opcion)) {
+                            if (jugador.revisiarPago(0, 25.0)) {
+                                jugador.garajeAutos[slot].mejorarLlantas(2);
+                                jugador.pagar(0, 25.0);
+                                System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
+                                ejecutar.esperaEnter();
+
+                            } else {
+                                System.out.println("USTED NO CUENTA CON MONEDAS NECESARIAS");
+                                ejecutar.esperaEnter();
+
+                            }
+                            ejecutar.limpiarPantalla();
+                        }
+
+                        if ("2".equals(opcion)) {
+                            if (jugador.revisiarPago(0, 50.0)) {
+                                jugador.garajeAutos[slot].mejorarLlantas(3);
+                                jugador.pagar(0, 50.0);
+                                System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
+                                ejecutar.esperaEnter();
+
+                            } else {
+                                System.out.println("USTED NO CUENTA CON MONEDAS NECESARIAS");
+                                ejecutar.esperaEnter();
+
+                            }
+
+                            ejecutar.limpiarPantalla();
+                        }
+
+                        if ("3".equals(opcion)) {
+                            if (jugador.revisiarPago(0, 75.0)) {
+                                jugador.garajeAutos[slot].mejorarLlantas(5);
+                                jugador.pagar(0, 75.0);
+                                System.out.println(jugador.garajeAutos[slot].mostrarCaracteristicas());
+                                ejecutar.esperaEnter();
+
+                            } else {
+                                System.out.println("USTED NO CUENTA CON MONEDAS NECESARIAS");
+                                ejecutar.esperaEnter();
+
+                            }
+                            ejecutar.limpiarPantalla();
+
+                        }
+
+                        if ("0".equals(opcion)) {
+                            ejecutar.limpiarPantalla();
+                        }
+                        if (!"1".equals(opcion) && !"2".equals(opcion) && !"3".equals(opcion) && !"0".equals(opcion)) {
+                            ejecutar.valorInvalido();
+                        }
+
+                        break;
+                    case "3":
+                        int cantidad;
+                        System.out.println(jugador.mostrarDatos());
+                        dibujar.gasolinera();
+                        System.out.println("\n" + DibujosAscii.amarillo + "BIENVENIDO A LA GASOLINERA" + DibujosAscii.reset);
+                        System.out.println("\n\t1.Comprar gasolina\t2.Fullear el tanque\t0.cancelar");
+                        opcion = sc.nextLine();
+                        if ("1".equals(opcion)) {
+                            System.out.println("\n\nSu gasolina actual es de: " + jugador.garajeAutos[slot].getGasolina());
+                            System.out.println("\ningrese la cantidad que desea: ");
+                            cantidad = Integer.parseInt(sc.nextLine());
+                            //if para evitar que se exceda de 100 galones de gasolina
+                            int gasolina = (cantidad + jugador.garajeAutos[slot].getGasolina());
+                            if (gasolina <= 100) {
+                                //if para condicionar el pago
+                                if (jugador.revisiarPago(0, (cantidad * 2.5))) {
+                                    jugador.garajeAutos[slot].llenarTanque(gasolina);
+                                    jugador.pagar(0, (cantidad * 2.5));
+                                    System.out.println("El tanque de su " + jugador.garajeAutos[slot].getNombre() + " ha sido fuleado hasta: " + jugador.garajeAutos[slot].getGasolina());
+                                    ejecutar.esperaEnter();
+
+                                } else { //si no cumple el pago
+                                    System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
+                                    ejecutar.esperaEnter();
+                                }
+                            } else { //si se pasa de 100 galones
+                                int resto = gasolina - 100;
+                                System.out.println("\nUSTED INTENTA LLENAR MAS DE LA CUENTA EL TANQUE");
+                                //se verifica el pago de los galones que caben
+                                if (jugador.revisiarPago(0, ((cantidad - resto) * 2.5))) {
+                                    jugador.garajeAutos[slot].llenarTanque(gasolina - resto);
+                                    jugador.pagar(0, ((cantidad - resto) * 2.5));
+                                    System.out.println("\nSu tanque ha sifo fulleado con " + (cantidad - resto));
+                                    System.out.println("\nEl tanque de su " + jugador.garajeAutos[slot].getNombre() + " ha sido fuleado");
+                                    ejecutar.esperaEnter();
+                                } else { //si no cumple el pago
+                                    System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
+                                    ejecutar.esperaEnter();
+                                }
+
+                            } //fin del caso 1
+                        }
+                        if ("2".equals(opcion)){
+                            if (jugador.revisiarPago(0, ((( jugador.garajeAutos[slot].getGasolina())-100) * 2.5))) {
+                                    jugador.garajeAutos[slot].llenarTanque((( jugador.garajeAutos[slot].getGasolina())-100));
+                                    jugador.pagar(0, ((( jugador.garajeAutos[slot].getGasolina())-100) * 2.5));
+                                    System.out.println("\nSu tanque ha sifo fulleado con " + (( jugador.garajeAutos[slot].getGasolina())-100));
+                                    System.out.println("\nEl tanque de su " + jugador.garajeAutos[slot].getNombre() + " ha sido fuleado");
+                                    ejecutar.esperaEnter();
+                                } else { //si no cumple el pago
+                                    System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
+                                    ejecutar.esperaEnter();
+                                }
+                        }
+                        if ("0".equals(opcion)) {
+                            ejecutar.limpiarPantalla();
+                        }
+                        if (!"1".equals(opcion) && !"2".equals(opcion) && !"3".equals(opcion) && !"0".equals(opcion)) {
+                            ejecutar.valorInvalido();
+                        }
+                        ejecutar.limpiarPantalla();
+
+                        break;
+                    case "4":
+                        dibujar.menuColores();
+                        System.out.println("\nSu auto actual es: " + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter() + "\n\n");
+                        System.out.println("\ningrese el color con el que desea pintar el auto:");
+                        opcion = sc.nextLine();
+                        if ("1".equals(opcion)) {
+                            if (jugador.revisiarPago(0, 20)) {
+                                jugador.garajeAutos[slot].cambiarColor(DibujosAscii.rojo);
+                                jugador.pagar(0, 20);
+                                System.out.println("\nSu auto ahora es:\n\t" + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter());
+
+                                ejecutar.esperaEnter();
+
+                            } else {
+                                System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
+                                ejecutar.esperaEnter();
+
+                            }
+                        }
+                        ejecutar.limpiarPantalla();
+                        if ("2".equals(opcion)) {
+                            if (jugador.revisiarPago(0, 20)) {
+                                jugador.garajeAutos[slot].cambiarColor(DibujosAscii.azul);
+                                jugador.pagar(0, 20);
+                                System.out.println("\nSu auto ahora es:\n\t" + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter());
+                                ejecutar.esperaEnter();
+
+                            } else {
+                                System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
+                                ejecutar.esperaEnter();
+
+                            }
+                        }
+                        ejecutar.limpiarPantalla();
+                        if ("3".equals(opcion)) {
+                            if (jugador.revisiarPago(0, 20)) {
+                                jugador.garajeAutos[slot].cambiarColor(DibujosAscii.verde);
+                                jugador.pagar(0, 20);
+                                System.out.println("\nSu auto ahora es:\n\t" + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter());
+
+                                ejecutar.esperaEnter();
+
+                            } else {
                                 System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
                                 ejecutar.esperaEnter();
                             }
-                        } else { //si se pasa de 100 galones
-                            int resto = gasolina - 100;
-                            System.out.println("\nUSTED INTENTA LLENAR MAS DE LA CUENTA EL TANQUE");
-                            //se verifica el pago de los galones que caben
-                            if (jugador.revisiarPago(0, ((cantidad-resto) * 2.5))) {
-                                jugador.garajeAutos[slot].llenarTanque(gasolina - resto);
-                                jugador.pagar(0, ((cantidad-resto) * 2.5));
-                                System.out.println("\nSu tanque ha sifo fulleado con " + (cantidad - resto));
-                                System.out.println("\nEl tanque de su " +jugador.garajeAutos[slot].getNombre() +" ha sido fuleado");
+                        }
+                        ejecutar.limpiarPantalla();
+
+                        if ("4".equals(opcion)) {
+                            if (jugador.revisiarPago(0, 20)) {
+                                jugador.garajeAutos[slot].cambiarColor(DibujosAscii.amarillo);
+                                jugador.pagar(0, 20);
+                                System.out.println("\nSu auto ahora es:\n\t" + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter());
+
                                 ejecutar.esperaEnter();
-                            } else { //si no cumple el pago
+
+                            } else {
                                 System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
                                 ejecutar.esperaEnter();
+
                             }
 
-                        } //fin del caso 1
-                    }
-                    if ("0".equals(opcion)) {
+                            ejecutar.limpiarPantalla();
+                        }
+                        if ("0".equals(opcion)) {
+                            ejecutar.limpiarPantalla();
+                        }
+                        if (!"1".equals(opcion) && !"2".equals(opcion) && !"3".equals(opcion) && !"0".equals(opcion)) {
+                            ejecutar.valorInvalido();
+                        }
+
                         ejecutar.limpiarPantalla();
-                    }
-                    if (!"1".equals(opcion) && !"2".equals(opcion) && !"3".equals(opcion) && !"0".equals(opcion)) {
+                        break;
+                    default:
                         ejecutar.valorInvalido();
-                    }
-                            ejecutar.limpiarPantalla();
-
-                    break;
-                case "4":
-                    dibujar.menuColores();
-                    System.out.println("\nSu auto actual es: " +jugador.garajeAutos[slot].getColor()+jugador.garajeAutos[slot].getCaracter() +"\n\n");
-                    System.out.println("\ningrese el color con el que desea pintar el auto:");
-                    opcion = sc.nextLine();
-                    if ("1".equals(opcion)) {
-                        if (jugador.revisiarPago(0, 20)) {
-                            jugador.garajeAutos[slot].cambiarColor(DibujosAscii.rojo);
-                            jugador.pagar(0, 20);
-                            System.out.println("\nSu auto ahora es:\n\t" + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter());
-
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
-                            ejecutar.esperaEnter();
-
-                        }
-                    }
-                            ejecutar.limpiarPantalla();
-                    if ("2".equals(opcion)) {
-                        if (jugador.revisiarPago(0, 20)) {
-                            jugador.garajeAutos[slot].cambiarColor(DibujosAscii.azul);
-                            jugador.pagar(0, 20);
-                            System.out.println("\nSu auto ahora es:\n\t" + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter());
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
-                            ejecutar.esperaEnter();
-
-                        }
-                    }
-                            ejecutar.limpiarPantalla();
-                    if ("3".equals(opcion)) {
-                        if (jugador.revisiarPago(0, 20)) {
-                            jugador.garajeAutos[slot].cambiarColor(DibujosAscii.verde);
-                            jugador.pagar(0, 20);
-                            System.out.println("\nSu auto ahora es:\n\t" + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter());
-
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
-                            ejecutar.esperaEnter();
-                        }
-                    }
-                            ejecutar.limpiarPantalla();
-                    
-                    if ("4".equals(opcion)) {
-                        if (jugador.revisiarPago(0, 20)) {
-                            jugador.garajeAutos[slot].cambiarColor(DibujosAscii.amarillo);
-                            jugador.pagar(0, 20);
-                            System.out.println("\nSu auto ahora es:\n\t" + jugador.garajeAutos[slot].getColor() + jugador.garajeAutos[slot].getCaracter());
-
-                            ejecutar.esperaEnter();
-
-                        } else {
-                            System.out.println("USTED NO CUENTA CON MONEDAS SUFICIENTES");
-                            ejecutar.esperaEnter();
-
-                        }
-
-                        ejecutar.limpiarPantalla();
-                    }
-                    if ("0".equals(opcion)) {
-                        ejecutar.limpiarPantalla();
-                    }
-                    if (!"1".equals(opcion) && !"2".equals(opcion) && !"3".equals(opcion) && !"0".equals(opcion)) {
-                        ejecutar.valorInvalido();
-                    }
-
-                    ejecutar.limpiarPantalla();
-                    break;
-                default:
-                    ejecutar.valorInvalido();
+                }
             }
 
         }

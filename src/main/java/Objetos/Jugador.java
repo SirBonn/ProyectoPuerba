@@ -13,7 +13,7 @@ public class Jugador {
     private String ganadores;
 
     public Jugador(String nick, int gemas, double monedas) {
-        this.nick = nick;                       //mandando el nombre del jugador desde el inicio 
+        this.nick = nick;                       //mandando el nombre del jugador desde el inicio
         this.monedas = monedas;                 //"
         this.gemas = gemas;                     //"
         this.garajeAutos = new Auto[5];         //inicializando el garaje de 5 slots
@@ -34,7 +34,7 @@ public class Jugador {
 
     public boolean revisiarPago(int gemas, double monedas) {
         return this.gemas >= gemas && this.monedas >= monedas;
-
+        
     }
 
     public void comprarAuto(Auto auto) {

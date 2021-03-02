@@ -27,6 +27,14 @@ public class Auto {
 
     }
 
+    public void mejorarAuto(int upgradeAceleracion, int upgradeCoeficienteDeLlantas, int upgradeGasolina, String upgradeColor){
+        this.aceleracion = upgradeAceleracion;
+        this.coeficienteLlantas = upgradeCoeficienteDeLlantas;
+        this.gasolina = upgradeGasolina;
+        this.color = upgradeColor;
+        
+    }
+    
     public void mejorarAceleracion(int upgrade) {
         this.aceleracion = upgrade;
     }
